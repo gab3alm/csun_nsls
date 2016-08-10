@@ -1,0 +1,17 @@
+nav{
+  background-color:rgba(19,31,41,.85);
+  /*background-color:rgba(184,31,37,1);*/
+}
+
+.nsls-logo{
+  position:absolute;
+  top:10px;
+  left:10px;
+  height:120px;
+}
+
+.navbar-link{
+  font-family:lato;
+  font-size:1.2em;
+  text-transform: capitalize;
+}
