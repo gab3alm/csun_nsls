@@ -8,6 +8,7 @@ nav{
   top:10px;
   left:10px;
   height:120px;
+  z-index:5;
 }
 
 .navbar-link{

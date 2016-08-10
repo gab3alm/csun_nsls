@@ -5,6 +5,7 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
 import "angular2-materialize";
 import {NavbarComponent} from './imports/navbar/navbar.component';
 import {FooterComponent} from './imports/footer/footer.component';
+import {APP_ROUTER} from './router';
 
 
 import template from './main.html';
@@ -18,6 +19,7 @@ import template from './main.html';
 class Main{}
 
 bootstrap(Main, [
+  APP_ROUTER,
   disableDeprecatedForms(),
   provideForms()
   ])
