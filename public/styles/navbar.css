@@ -9,6 +9,7 @@ nav{
   left:10px;
   height:120px;
   z-index:5;
+  border-radius: 50%;
 }
 
 .navbar-link{

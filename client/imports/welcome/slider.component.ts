@@ -5,6 +5,7 @@ import template from './slider.html';
 @Component({
   selector:'slides',
   template,
+  styleUrls:['styles/slider.css'],
   directives:[MaterializeDirective]
 })
 
