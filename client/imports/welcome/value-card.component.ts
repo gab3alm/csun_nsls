@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 import template from './valuecard.html';
 @Component({
   selector:'value-card',
-  template
+  template,
+  styleUrls:['styles/valuecard.css']
 })
 
 export class ValuecardComponent{

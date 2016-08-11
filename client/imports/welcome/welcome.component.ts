@@ -10,6 +10,11 @@ import template from './welcome.html';
 })
 
 export class WelcomeComponent{
+  valuecard1:Array<Object>;
+  valuecard2:Array<Object>;
+  valuecard3:Array<Object>;
+  valuecard4:Array<Object>;
+
 
 }
 

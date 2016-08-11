@@ -1,14 +1,21 @@
 nav{
-  background-color:rgba(19,31,41,.85);
+  position:fixed;
+  top:0px;
+  left:0px;
+  z-index:10;
+  /*background-color:rgba(19,31,41,.85);*/
   /*background-color:rgba(184,31,37,1);*/
+  background-color:rgba(184,31,37);
+  padding:0px !important;
+  margin:0px !important;
 }
 
 .nsls-logo{
-  position:absolute;
+  z-index:11;
+  position:fixed;
   top:10px;
   left:10px;
   height:120px;
-  z-index:5;
   border-radius: 50%;
 }
 
