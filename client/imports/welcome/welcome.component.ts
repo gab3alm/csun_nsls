@@ -15,7 +15,12 @@ export class WelcomeComponent{
   valuecard3:Array<Object>;
   valuecard4:Array<Object>;
 
-
+  contructor(){
+    this.valuecard1 = [{'value':'testing1', 'description':'testing1'}];
+    this.valuecard2 = [{'value':'testing2', 'description':'testing2'}];
+    this.valuecard3 = [{'value':'testing3', 'description':'testing3'}];
+    this.valuecard4 = [{'value':'testing4', 'description':'testing4'}];
+  }
 }
 
 
