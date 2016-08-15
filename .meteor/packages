@@ -25,3 +25,5 @@ dispatch:mocha-phantomjs
 #fourseven:scss@=3.8.0_1
 materialize:materialize@=0.97.6
 natestrauser:animate-css
+accounts-password
+session

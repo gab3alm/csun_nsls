@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <!-- STUDENT MEMBER LOGIN -->
+    <div *ngIf="!executive" class="col s12 m6 l6">
+      <div [ngClass]="{bounce: memberbounce}" class="card small animated bounce hoverable">
+        <div class="card-image">
+          <img src="images/login/member.jpg">
+          <span class="card-title">student member</span>
+        </div>
+        <div class="card-content center-align">
+          <p class="card-message">Sign in to events. That's it!</p>
+          <button (click)="animate('member')" class="btn-flat btn-cust">Let's go!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXECUTIVE MEMBER LOGIN -->
+    <div *ngIf="!member" class="col s12 m6 l6">
+      <div [ngClass]="{bounce: executivebounce}" class="card small animated bounce hoverable">
+        <div class="card-image">
+          <img src="images/login/executive.jpg">
+          <span class="card-title">Executive Board Member</span>
+        </div>
+        <div class="card-content center-align">
+          <p class="card-message">Set up events for members and other stuff.</p>
+          <button (click)="animate('executive')" class="btn-flat btn-cust">Let's go!</button>
+        </div>
+      </div>
+    </div>    
+  </div>
+
+
+
+  <!-- LOGIN AREA -->
+  <div *ngIf="category" class="row animated fadeInLeft">
+    <!-- MEMBER LOGIN AREA -->
+    <div *ngIf="member" class="col s12">
+     <p class="area-header">member event sign in</p>
+     <!--ALL AVAILABLE EVENTS ARE HERE!-->
+   </div>
+
+   <!-- EXECUTIVE MEMBER LOGIN AREA -->
+   <div *ngIf="executive" class="col s12 m12">
+    <p class="area-header">executive member sign in</p>
+    <!-- <div class="input-field col s12 m8">
+      <input [(ngModel)]="firstname" name="firstname" id="firstname" type="text" class="validate">
+      <label for="lastname">Firstname</label>
+    </div>
+    <div class="input-field col s12 m8">
+      <input [(ngModel)]="lastname" name="lastname" id="lastname" type="text" class="validate">
+      <label for="lastname">Lastname</label>
+    </div> -->
+    <!-- USERNAME -->
+    <div class="input-field col s12 m8">
+      <input  [(ngModel)]="username" name="username" id="username" type="text" class="validate">
+      <label for="username">Username</label>
+    </div>
+    <!-- PASSWORD -->
+    <div class="input-field col s12 m8">
+      <input [(ngModel)]="password" name="password" id="password" type="password" class="validate">
+      <label for="password">Password</label>
+    </div>
+  </div>
+
+  <button (click)="reset()" class="btn btn-cust">Go Back</button>
+  <button (click)="verifyLogin(username, password)" class="btn btn-cust">Sign In</button>
+</div>
+
+</div>
