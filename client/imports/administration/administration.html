@@ -1,8 +1,19 @@
 <div class="container-fluid">
+  <!-- WELCOME MESSAGE -->
   <div class="row">
-    <div class="col s12">
-      <p class="welcome-message">Welcome {{username}}</p>
-      
+    <p class="welcome-message">welcome, {{username}}</p>
+  </div>
+  <!-- ADMIN MENU -->
+  <div class="row center-align">
+    <div class="admin-menu right-align">
+      <button class="btn" [routerLink]="['setup']">Event Setup</button>
+      <button class="btn" [routerLink]="['records']">Event Records</button>
+      <button class="btn">Account Settings</button>
     </div>
+  </div>  
+
+  <!-- ROUTER_OUTLET -->
+  <div class="row">
+    <router-outlet></router-outlet>
   </div>
 </div>

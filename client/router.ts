@@ -2,11 +2,18 @@ import {RouterConfig, provideRouter} from '@angular/router';
 import {WelcomeComponent} from './imports/welcome/welcome.component';
 import {LoginComponent} from './imports/login/login.component';
 import {AdministrationComponent} from './imports/administration/administration.component';
+import {AdminWelcomeComponent} from './imports/administration/admin-welcome.component';
+import {EventsetupComponent} from './imports/administration/event-setup.component';
+import {EventrecordsComponent} from './imports/administration/event-records.component';
 
 const routes : RouterConfig = [
   {path:'',component:WelcomeComponent},
   {path:'login', component:LoginComponent},
-  {path:'admin', component:AdministrationComponent}
+  {path:'admin', component:AdministrationComponent, children:[
+    {path:'', component:AdminWelcomeComponent}, 
+    {path:'setup', component: EventsetupComponent},
+    {path:'records', component: EventrecordsComponent}
+  ]}
 ];
 
 export const APP_ROUTER = [provideRouter(routes)];
