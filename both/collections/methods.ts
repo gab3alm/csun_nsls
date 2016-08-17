@@ -14,6 +14,7 @@ Meteor.methods({
       'name':name,
       'date':date,
       'status':'active',
+      'archived':false,
       'attendants':[]
     });
   },
@@ -26,6 +27,30 @@ Meteor.methods({
     Events.update({'_id':eventID}, {$addToSet:{
       'attendants': attendee
     }}, {upsert:true});  
+  },
+
+  // Closes event for members
+  closeEvent: function(eventID:string){
+    Events.update({'_id':eventID}, {$set: {
+      'status':'done'
+    }});
+  },
+
+  // Reactivated event for members to sign in
+  activateEvent: function(eventID:string){
+    Events.update({'_id':eventID}, {$set: {
+      'status':'active',
+      'archived':false
+    }});
+  },
+
+  // archive event
+  archiveEvent: function(eventID:string){
+    Events.update({'_id':eventID}, {$set: {
+      'status':'done',
+      'archived':true
+    }});
   }
+
 
 });

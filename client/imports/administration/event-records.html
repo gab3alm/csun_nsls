@@ -1,10 +1,19 @@
 <div class="container">
   <div class="row">
-    <p class="title">Event Records</p>
-
-    <ul *ngFor="let event of Events" materialize="collapsible" class="collapsible" data-collapsible="accordion">
+    <p class="title">Event Records|</p>
+    <a class="record-section" [routerLink]="['']">active</a>
+    <a class="record-section" [routerLink]="['admin/records/archive']">archive</a>
+  </div>
+  <div class="row">
+    <ul *ngFor="let event of Events" materialize="collapsible" class="collapsible hoverable" data-collapsible="accordion">
       <li>
-        <div class="collapsible-header"><p class="event-title">{{event.name}} || {{event.date}}</p></div>
+        <div class="collapsible-header">
+          <p class="event-title">{{event.name}} <br> <small>{{event.date}}</small></p>
+          <div class="btn-holder right-align">
+            <button *ngIf="event.status != 'active'" (click)="activateEvent(event._id)" class="btn cust-btn">Activate</button>
+            <button *ngIf="event.status != 'active'" (click)="activateEvent(event._id)" class="btn cust-btn">Archive</button>
+          </div>
+        </div>
         <div class="collapsible-body">
           <table class="bordered centered highlight responsive-table">
             <thead>

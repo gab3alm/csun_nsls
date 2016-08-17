@@ -31,4 +31,7 @@ export class EventsetupComponent extends MeteorComponent implements OnInit{
     this.call('createEvent', EventName);
   }
 
+  closeEvent(EventID){
+    this.call('closeEvent', EventID);
+  }
 }

@@ -3,6 +3,7 @@ export interface EventModel{
   name:string;
   date:string;
   status:string;
+  archived:boolean;
   attendants:Array<student>;
 }
 

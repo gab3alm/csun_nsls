@@ -4,14 +4,14 @@ import {MeteorComponent} from 'angular2-meteor';
 import {Mongo} from 'meteor/mongo';
 import {EventModel} from '../../../both/models/eventmodel';
 import {MaterializeDirective} from 'angular2-materialize';
-
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
 import template from './event-records.html';
 @Component({
   selector:'event-records',
   template,
   styleUrls:['styles/event-records.css'],
-  directives:[MaterializeDirective]
+  directives:[MaterializeDirective, ROUTER_DIRECTIVES]
 })
 
 export class EventrecordsComponent extends MeteorComponent implements OnInit{
@@ -26,5 +26,8 @@ export class EventrecordsComponent extends MeteorComponent implements OnInit{
     });
   }
 
+  activateEvent(EventID){
+    this.call('activateEvent', EventID);
+  }
 
 }

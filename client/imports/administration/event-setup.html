@@ -13,7 +13,7 @@
             <p class="event-name">{{event.name}}</p> 
             <p class="event-date">{{event.date}}</p>  
           </div>
-          <button class="cust-btn status-btn tooltipped" materialize="tooltip" data-position="right" data-delay="50" data-tooltip="Close Event">Close</button>
+          <button (click)="closeEvent(event._id)" class="cust-btn status-btn tooltipped" materialize="tooltip" data-position="right" data-delay="50" data-tooltip="Close Event">Close</button>
         </li>
       </ul>  
     </div>

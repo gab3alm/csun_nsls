@@ -1,7 +1,28 @@
+.btn-holder{
+  margin:0px;
+  padding:0px;
+}
+
 .title{
   font-family:lato;
   font-size:1.8em;
   text-transform: uppercase;
+  display:inline-block;
+}
+
+.event-title{
+  font-family:lato;
+  font-size:1.2em;
+  text-align:center;
+  padding:0px;
+  margin:0px;
+}
+
+.record-section{
+  font-family:lato;
+  font-size:1em;
+  text-transform: capitalize;
+  margin-left:10px;
 }
 
 .table-info{
@@ -11,4 +32,11 @@
 
 .cap{
   text-transform: capitalize;
+}
+
+.cust-btn{
+  border-radius:20px;
+  background-color:transparent;
+  border:2px solid rgba(0,0,255,.5);
+  color:rgba(0,0,255,.5);
 }
