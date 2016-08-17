@@ -30,3 +30,22 @@
   font-weight:bold;
   text-transform: uppercase;
 }
+
+/*MEMBER SIGN IN AREA*/
+.title{
+  font-family:lato;
+  font-size:1.5em;
+  padding:0px;
+  margin:0px;
+}
+
+.event-registration-form{
+  padding:20px;
+}
+
+.success{
+  font-family:lato;
+  font-size:1.8em;
+  text-align:center;
+  color:rgba(255,0,0,.85);
+}

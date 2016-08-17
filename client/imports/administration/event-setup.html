@@ -1,1 +1,45 @@
-<p>Event Setup page</p>
+<div class="container">
+  <div class="row">
+    <p class="area-title">Event Setup</p>
+
+    <a class="modal-trigger" href="#NewEvent" materialize="leanModal" [materializeParams]="[{dismissible: true}]">
+      <img class="addEvent tooltipped" data-position="right" data-delay="50" data-tooltip="Create Event" materialize="tooltip" src="images/add.svg" alt="add event image">
+    </a>
+    <!-- ACTIVE EVENTS -->
+    <div *ngIf="ActiveEvents">
+      <ul *ngFor="let event of ActiveEvents" class="collection hoverable">
+        <li class="collection-item"> 
+          <div class="event-information-holder center-align">
+            <p class="event-name">{{event.name}}</p> 
+            <p class="event-date">{{event.date}}</p>  
+          </div>
+          <button class="cust-btn status-btn tooltipped" materialize="tooltip" data-position="right" data-delay="50" data-tooltip="Close Event">Close</button>
+        </li>
+      </ul>  
+    </div>
+    <!-- THERE ARE NO ACTIVE EVENTS -->
+    <div *ngIf="!ActiveEvents">
+      <p class="info">There are no active events</p>
+    </div> 
+
+  </div>
+</div>
+
+
+
+
+<!-- Modal Structure -->
+<div id="NewEvent" class="modal">
+  <div class="modal-content">
+    <h4>Create New Event</h4>
+    <div class="row">
+      <div class="input-field col s10 push-s1">
+        <input [(ngModel)]="eventName" name="eventName" id="EventName" type="text" class="validate">
+        <label for="EventName">Event Name</label>
+      </div>
+      <div class="center-align">
+        <button (click)="createNewEvent(eventName)" class="btn cust-btn modal-action modal-close">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

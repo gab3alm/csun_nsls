@@ -1,0 +1,55 @@
+.area-title{
+  font-family:lato;
+  font-size:1.8em;
+  font-weight:bold;
+  text-decoration: underline;
+  margin:0px;
+  display:inline-block;
+}
+
+.info{
+  margin:0px;
+  font-family:karla;
+  font-size:1.5em;
+}
+
+.addEvent{
+  margin:0px 0px 0px 5px;
+  height:20px; 
+}
+
+/*COLLECTION RULES*/
+.collection-item{
+  position:relative;
+}
+
+.event-name{
+  font-family:lato;
+  font-size:1.2em;
+  text-transform: capitalize;
+  color:rgba(0,0,0,.85);
+}
+
+.event-date{
+ font-family:karla;
+ font-size:.9em;
+ color:rgba(0,0,0,.65);
+}
+
+.status-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
+/*MODAL RULES*/
+#NewEvent{
+  width:500px;
+}
+
+.cust-btn{
+  border-radius:20px;
+  background-color:transparent;
+  border:2px solid rgba(0,0,255,.5);
+  color:rgba(0,0,255,.5);
+}

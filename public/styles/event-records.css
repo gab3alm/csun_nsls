@@ -1,0 +1,14 @@
+.title{
+  font-family:lato;
+  font-size:1.8em;
+  text-transform: uppercase;
+}
+
+.table-info{
+  font-family:roboto;
+  font-size:1em;
+}
+
+.cap{
+  text-transform: capitalize;
+}

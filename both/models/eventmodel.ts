@@ -1,4 +1,4 @@
-export interface Event{
+export interface EventModel{
   creator:string;
   name:string;
   date:string;
@@ -7,9 +7,12 @@ export interface Event{
 }
 
 interface student{
-  ticketID:string;
+  IPaddress:any;
+  ticket:string;
   firstname:string;
   lastname:string;
-  phone:string;
   email:string;
+  phone:string;
+  date:string;
+  credit:boolean;
 }

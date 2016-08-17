@@ -1,8 +1,8 @@
 import {Meteor} from 'meteor/meteor';
 import {Mongo} from 'meteor/mongo';
-import {Event} from '../models/eventmodel';
+import {EventModel} from '../models/eventmodel';
 
-export let Events = new Mongo.Collection<Event>('events');
+export let Events = new Mongo.Collection<EventModel>('events');
 
 // Check if user is logged in
 function loggedIn() {

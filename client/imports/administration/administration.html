@@ -1,13 +1,17 @@
-<div class="container-fluid">
+<div class="container">
   <!-- WELCOME MESSAGE -->
   <div class="row">
     <p class="welcome-message">welcome, {{username}}</p>
   </div>
   <!-- ADMIN MENU -->
   <div class="row center-align">
-    <div class="admin-menu right-align">
-      <button class="btn" [routerLink]="['setup']">Event Setup</button>
+    <div class="col s4">
+      <button class="btn" [routerLink]="['setup']">Setup Event</button>
+    </div>
+    <div class="col s4">
       <button class="btn" [routerLink]="['records']">Event Records</button>
+    </div>
+    <div class="col s4">
       <button class="btn">Account Settings</button>
     </div>
   </div>  
