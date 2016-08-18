@@ -36,4 +36,33 @@ Angular2-Meteor - http://www.angular-meteor.com/
 ## Wanna help out and don't know where to start?
 
 ### Using Linux?
-You need some Node and Meteor in your life.
+You need some Node, Git, and Meteor in your life. (If you don't have them already)
+
+Node JS - https://nodejs.org/en/download/package-manager/ (get the 4.4.7 version)
+
+Meteor JS - https://www.meteor.com/install (I'm using 1.4)
+
+Git - sudo apt-get install -y git
+
+After installing those stuff, it's time to clone this repo.
+Just cd into your desired folder and type 
+`git clone https://github.com/gab3alm/csun_nsls.git`
+
+Now, cd into the project and type
+`Meteor npm install`
+
+This will install all the project dependencies required.
+
+You are almost there,
+
+After you finish the NPM install, you can just use the following command
+
+`Meteor`
+
+That will initialize the project and install all Meteor (atmosphere js) packages required by the project.
+
+It will take a while (1 min or so), and hopefully you will see the following result
+
+`App running at: http://localhost:3000/`
+
+Congrats, the project is up and running. Now just go to a browser and go to that address.
