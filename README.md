@@ -42,13 +42,15 @@ Node JS - https://nodejs.org/en/download/package-manager/ (get the 4.4.7 version
 
 Meteor JS - https://www.meteor.com/install (I'm using 1.4)
 
-Git - sudo apt-get install -y git
+Git - `sudo apt-get install -y git`
 
 After installing those stuff, it's time to clone this repo.
-Just cd into your desired folder and type 
+Just cd into your desired folder and type
+
 `git clone https://github.com/gab3alm/csun_nsls.git`
 
 Now, cd into the project and type
+
 `Meteor npm install`
 
 This will install all the project dependencies required.
@@ -66,3 +68,16 @@ It will take a while (1 min or so), and hopefully you will see the following res
 `App running at: http://localhost:3000/`
 
 Congrats, the project is up and running. Now just go to a browser and go to that address.
+
+You can make changes to the project using your favorite text editor or IDE.
+
+When the project is running, any kind of file changes force the browser to refresh in order to show changes.
+
+## Using Windows or OSX?
+Honestly, I have not developed Meteor apps in Windows or OSX, yet.
+
+Meteor has a Windows installer that will get you started.
+
+OSX has a similar installation process as Linux. 
+
+Google is your best friend!
