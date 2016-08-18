@@ -1,5 +1,7 @@
 # NSLS - CSUN Chapter Site
 
+csun-nsls.com
+
 ## Use
 The main purpose of this site is to provide answers for member questions that are specifically focused on the CSUN Chapter activities.
 
