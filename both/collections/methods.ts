@@ -3,8 +3,6 @@ import {Events} from './events';
 import {Attendee} from '../classes/attendee';
 import {ServerSession} from 'meteor/matteodem:server-session';
 
-
-
 Meteor.methods({
   // Create a new event and make it ready for members to see it.
   createEvent: function(name:string){
@@ -32,7 +30,8 @@ Meteor.methods({
   // Closes event for members
   closeEvent: function(eventID:string){
     Events.update({'_id':eventID}, {$set: {
-      'status':'done'
+      'status':'done',
+      'archived':true
     }});
   },
 
@@ -40,7 +39,7 @@ Meteor.methods({
   activateEvent: function(eventID:string){
     Events.update({'_id':eventID}, {$set: {
       'status':'active',
-      'archived':false
+      'archived':'false'
     }});
   },
 

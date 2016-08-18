@@ -99,29 +99,33 @@
 
   <!-- EXECUTIVE MEMBER LOGIN AREA -->
   <div *ngIf="executive" class="col s12 m12">
-    <p class="area-header">executive member sign in</p>
-    <!-- <div class="input-field col s12 m8">
-      <input [(ngModel)]="firstname" name="firstname" id="firstname" type="text" class="validate">
-      <label for="lastname">Firstname</label>
-    </div>
-    <div class="input-field col s12 m8">
-      <input [(ngModel)]="lastname" name="lastname" id="lastname" type="text" class="validate">
-      <label for="lastname">Lastname</label>
-    </div> -->
-    <!-- USERNAME -->
-    <div class="input-field col s12 m8">
-      <input  [(ngModel)]="username" name="username" id="username" type="text" class="validate">
-      <label for="username">Username</label>
-    </div>
-    <!-- PASSWORD -->
-    <div class="input-field col s12 m8">
-      <input [(ngModel)]="password" name="password" id="password" type="password" class="validate">
-      <label for="password">Password</label>
-    </div>
-    <div class="row">
-      <button (click)="verifyLogin(username, password)" class="btn btn-cust">Sign In</button>
-      <!-- <button (click)="registerUser()" class="btn btn-cust">Register</button> -->
-    </div>
+    <form (ngSubmit)="verifyLogin(username, password)">
+      <div class="row">
+        <p class="area-header">executive member sign in</p>
+        <!-- <div class="input-field col s12 m8">
+          <input [(ngModel)]="firstname" name="firstname" id="firstname" type="text" class="validate">
+          <label for="lastname">Firstname</label>
+        </div>
+        <div class="input-field col s12 m8">
+          <input [(ngModel)]="lastname" name="lastname" id="lastname" type="text" class="validate">
+          <label for="lastname">Lastname</label>
+        </div> -->
+        <!-- USERNAME -->
+        <div class="input-field col s12 m8">
+          <input  [(ngModel)]="username" name="username" id="username" type="text" class="validate">
+          <label for="username">Username</label>
+        </div>
+        <!-- PASSWORD -->
+        <div class="input-field col s12 m8">
+          <input [(ngModel)]="password" name="password" id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>  
+      </div>
+      <div class="row">
+        <button type="submit" class="btn btn-cust">Sign In</button>
+        <!-- <button (click)="registerUser()" class="btn btn-cust">Register</button> -->
+      </div>
+    </form>
   </div>
 
   <button (click)="reset()" class="btn btn-cust">Go Back</button>

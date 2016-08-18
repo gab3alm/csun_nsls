@@ -15,14 +15,21 @@ import template from './event-records.html';
 })
 
 export class EventrecordsComponent extends MeteorComponent implements OnInit{
-  Events:Mongo.Cursor<EventModel>;
+  ActiveEvents:Mongo.Cursor<EventModel>;
+  ArchivedEvents:Mongo.Cursor<EventModel>;
+  ShowActive:boolean;
+  
   constructor(){
     super();
+    // Active event side is rendered by default
+    this.ShowActive = true;
   }
 
   ngOnInit(){
+    // Create List of Active/Archived Events
     this.subscribe('Events', ()=>{
-      this.Events = Events.find();
+      this.ActiveEvents = Events.find({'status':'active'});
+      this.ArchivedEvents = Events.find({'archived':true});
     });
   }
 
@@ -30,4 +37,15 @@ export class EventrecordsComponent extends MeteorComponent implements OnInit{
     this.call('activateEvent', EventID);
   }
 
+  archiveEvent(EventID){
+    this.call('archiveEvent', EventID);
+  }
+
+  show(section){
+    if(section == 'active'){
+      this.ShowActive = true;
+    }else{
+      this.ShowActive = false;
+    }
+  }
 }

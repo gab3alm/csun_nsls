@@ -89,14 +89,14 @@ export class LoginComponent extends MeteorComponent implements OnInit{
   }
 
   //Testing purposes
-  // registerUser(){
-  //   Accounts.createUser({
-  //     'username':this.username,
-  //     'password':this.password,
-  //     'profile':{
-  //       'firstname':this.firstname,
-  //       'lastname':this.lastname
-  //     }
-  //   });
-  // }
+  registerUser(){
+    Accounts.createUser({
+      'username':this.username,
+      'password':this.password,
+      'profile':{
+        'firstname':this.firstname,
+        'lastname':this.lastname
+      }
+    });
+  }
 }
