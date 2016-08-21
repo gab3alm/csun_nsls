@@ -1,0 +1,95 @@
+<div class="container">
+
+  <div class="main-title-area">
+    <p class="area-header">FAQ management</p>
+    <div class="add tooltipped" materialize="tooltip" data-position="right" data-delay="50" data-tooltip="Create New Question">
+      <img src="images/add.svg" class="add-icon modal-trigger" materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#QuestionCreation">
+    </div>  
+  </div>
+
+  <div class="row">
+    <div *ngFor="let q of questions" class="col s12 m6 l4">
+      <div class="card small hoverable">
+        <div class="card-content">
+          <div class="actions right-align">
+            <!-- UPDATE BUTTON -->
+            <div class="tooltipped update" materialize="tooltip" data-position="left" data-delay="50" data-tooltip="Update">
+              <img src="images/update.svg" class="action-img modal-trigger" materialize="leanModal" [materializeParams]="[{dismissible: true}]" [attr.href]="'#'+q._id+'update'"> 
+            </div>
+            <!-- DELETE BUTTON -->
+            <div class="tooltipped delete" materialize="tooltip" data-position="bottom" data-delay="50" data-tooltip="Delete">
+              <img src="images/delete.svg" class="action-img modal-trigger" materialize="leanModal" [materializeParams]="[{dismissible: true}]" [attr.href]="'#'+q._id+'deletion'"> 
+            </div>
+          </div>
+          <p class="question-title">{{q.question}}</p>
+          <p class="question-answer">{{q.answer}}</p>
+        </div>
+      </div>
+
+      <!-- CONFIRM DELETION MODAL-->
+      <div [attr.id]="q._id+'deletion'" class="modal deletion-modal">
+        <div class="modal-content">
+          <p class="modal-header">Deletion is permanent!</p>
+          <p class="modal-description">Do you want to procceed?</p>
+          <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a (click)="deleteQuestion(q._id)" class="modal-action modal-close waves-effect waves-green btn-flat">Yup</a>
+          </div>
+        </div>
+      </div>
+      <!-- END OF DELETION CONFIRM MODAL -->
+
+
+      <!-- QUESTION UPDATE MODAL -->
+      <div [attr.id]="q._id+'update'" class="modal deletion-modal">
+        <div class="modal-content">
+          <p class="modal-header">Update Question</p>
+          <!-- QUESTION -->
+          <div class="input-field col s12">
+          <textarea [(ngModel)]="question" name="question" id="question" class="materialize-textarea">hEllo asjdklajslk</textarea>
+            <label for="question">Question</label>
+          </div>
+          <!-- ANSWER -->
+          <div class="input-field col s12">
+            <textarea [(ngModel)]="answer" name="answer" id="answer" class="materialize-textarea">{{q.answer}}</textarea>
+            <label for="answer">Answer</label>
+          </div>
+          <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a (click)="updateQuestion(q._id, question, answer)" class="modal-action modal-close waves-effect waves-green btn-flat">Yup</a>
+          </div>
+        </div>
+      </div>
+      <!-- QUESTION UPDATE MODAL END -->
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<!-- QUESTION CREATION MODAL -->
+<div id="QuestionCreation" class="modal">
+  <div class="modal-content">
+    <h4>New FAQ Question</h4>
+    <!-- QUESTION -->
+    <div class="input-field col s12">
+      <textarea [(ngModel)]="question" name="question" id="question" class="materialize-textarea"></textarea>
+      <label for="question">Question</label>
+    </div>
+    <!-- ANSWER -->
+    <div class="input-field col s12">
+      <textarea [(ngModel)]="answer" name="answer" id="answer" class="materialize-textarea"></textarea>
+      <label for="answer">Answer</label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a  class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+    <a (click)="createQuestion(question, answer)" class="modal-action modal-close waves-effect waves-green btn-flat">Create</a>
+  </div>
+</div>
+

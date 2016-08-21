@@ -1,0 +1,43 @@
+.collapsible{
+  box-shadow: none;
+}
+
+.area-title{
+  font-family:lato;
+  font-size:1.8em;
+  text-transform: capitalize;
+  text-decoration: underline;
+  text-weight:bold;
+  margin:0px;
+}
+
+.collapsible-header, .collapsible-body{
+  position:relative;
+}
+
+.questions-area{
+  margin-top:50px;
+}
+
+.question-img, .answer-img{
+  height:25px;
+  position:absolute;
+  top:10px;
+  left:10px;
+}
+
+.question-title{
+  display:inline-block;
+  font-family:lato;
+  font-size:1.3em;
+  margin:0px 0px 0px 30px;
+  padding:0px;
+}
+
+.question-answer{
+  font-family:Roboto;
+  font-size:1.1em;
+  color:rgba(0,0,0,.85);
+  margin:0px 0px 0px 35px;
+  padding:10px;
+}

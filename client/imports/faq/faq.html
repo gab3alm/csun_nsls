@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+
+     <div class="questions-area">
+      <p class="area-title">FAQ</p>
+      <p class="area-description">
+        If you have a question that was not answered here, you can email us at <strong>csun.nsls.board@gmail.com</strong>
+        <br> Additionally, you can visit the <a target="_blank" href="https://www.societyleadership.org/about/faq">Society's FAQ</a> 
+      </p>
+      <ul materialize="collapsible" class="collapsible" data-collapsible="expandable">
+        <li *ngFor="let q of questions">
+          <div class="collapsible-header">
+            <img class="question-img" src="images/questions/info.svg" alt="">
+            <p class="question-title flow-text">{{q.question}}</p>
+          </div>
+          <div class="collapsible-body">
+            <img src="images/questions/answer.svg" class="answer-img">
+            <p class="question-answer flow-text">{{q.answer}}</p>
+          </div>
+        </li>
+      </ul>
+    </div> 
+
+
+  </div>
+</div>
+</div>

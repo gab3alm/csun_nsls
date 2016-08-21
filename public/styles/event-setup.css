@@ -1,9 +1,8 @@
 .area-title{
   font-family:lato;
   font-size:1.8em;
-  font-weight:bold;
-  text-decoration: underline;
   margin:0px;
+  font-weight:bold;
   display:inline-block;
 }
 
@@ -42,14 +41,58 @@
   right:10px;
 }
 
+.status-btn:hover{
+  box-shadow:none;
+}
+
 /*MODAL RULES*/
 #NewEvent{
   width:500px;
+  overflow:hidden;
+}
+
+.modal-content{
+  margin:0px;
+  padding:0px;
+}
+
+.modal-header{
+  margin:0px;
+  padding:0px 0px 0px 10px;
+  height:40px;
+  font-family:lato;
+  font-size:1.3em;
+  background-color:rgba(54,64,72,1);
+  color:white;
+  line-height:40px;
 }
 
 .cust-btn{
   border-radius:20px;
-  background-color:transparent;
-  border:2px solid rgba(0,0,255,.5);
-  color:rgba(0,0,255,.5);
+  background-color:transparent !important;
+  border:2px solid rgba(0,0,255,.5) !important;
+  color:rgba(0,0,255,.5) !important;
+}
+
+.cust-btn:hover{
+  color:rgba(255,255,255,1) !important;
+  background-color:rgba(0,0,255,.25) !important;
+}
+
+.disabled{
+  border-radius:20px;
+  background-color:transparent !important;
+  border:2px solid rgba(0,0,0,.5);
+  color:rgba(0,0,0,.5);
+}
+
+#EventName{
+  padding-bototm:0px;
+  margin:10px 0px 0px 0px;
+}
+
+.additional-information{
+  font-family:lato;
+  font-size:.9em;
+  color:rgba(0,0,0,.85);
 }

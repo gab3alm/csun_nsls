@@ -10,7 +10,7 @@
           <span class="card-title">student member</span>
         </div>
         <div class="card-content center-align">
-          <p class="card-message">Sign in to events. That's it!</p>
+          <p class="card-message">Sign in to events</p>
           <button (click)="animate('member')" class="btn-flat btn-cust">Let's go!</button>
         </div>
       </div>
@@ -38,6 +38,7 @@
     <!-- MEMBER LOGIN AREA -->
     <div *ngIf="member" class="col s12">
      <p class="area-header">member event sign in</p>
+     <p *ngIf="empty == undefined" class="notice flow-text">There are no events available! <br> If you are at an event, remind the person in charge to create one.</p>
      <!--ALL AVAILABLE EVENTS ARE HERE!-->
      <!-- ACTIVE EVENTS -->
      <div *ngIf="ActiveEvents">

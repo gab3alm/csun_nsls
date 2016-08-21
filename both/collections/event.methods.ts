@@ -35,11 +35,11 @@ Meteor.methods({
     }});
   },
 
-  // Reactivated event for members to sign in
+  // Reactivate event for members to sign in
   activateEvent: function(eventID:string){
     Events.update({'_id':eventID}, {$set: {
       'status':'active',
-      'archived':'false'
+      'archived':false
     }});
   },
 
@@ -49,7 +49,11 @@ Meteor.methods({
       'status':'done',
       'archived':true
     }});
-  }
+  },
 
+  // delete the event (Permanent Deletion)
+  deleteEvent:function(eventID:string){
+    Events.remove({'_id':eventID});
+  }
 
 });

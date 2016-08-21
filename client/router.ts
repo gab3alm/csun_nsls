@@ -5,14 +5,18 @@ import {AdministrationComponent} from './imports/administration/administration.c
 import {AdminWelcomeComponent} from './imports/administration/admin-welcome.component';
 import {EventsetupComponent} from './imports/administration/event-setup.component';
 import {EventrecordsComponent} from './imports/administration/event-records.component';
+import {FaqComponent} from './imports/faq/faq.component';
+import {FaqControlComponent} from './imports/administration/faq-control.component';
 
 const routes : RouterConfig = [
   {path:'',component:WelcomeComponent},
   {path:'login', component:LoginComponent},
+  {path:'faq', component:FaqComponent},
   {path:'admin', component:AdministrationComponent, children:[
     {path:'', component:AdminWelcomeComponent}, 
     {path:'setup', component: EventsetupComponent},
-    {path:'records', component: EventrecordsComponent}
+    {path:'records', component: EventrecordsComponent},
+    {path:'faq', component:FaqControlComponent}
   ]}
 ];
 

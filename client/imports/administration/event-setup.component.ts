@@ -5,13 +5,14 @@ import {Meteor} from 'meteor/meteor';
 import {MeteorComponent} from 'angular2-meteor';
 import {MaterializeDirective} from 'angular2-materialize';
 import {NgForm} from '@angular/forms';
+import {NgClass} from '@angular/common';
 
 import template from './event-setup.html';
 @Component({
   selector:'event-setup',
   template,
   styleUrls:['styles/event-setup.css'],
-  directives:[MaterializeDirective, NgForm]
+  directives:[MaterializeDirective, NgForm, NgClass]
 })
 
 export class EventsetupComponent extends MeteorComponent implements OnInit{

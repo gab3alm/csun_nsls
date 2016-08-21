@@ -1,0 +1,78 @@
+.main-title-area{
+  position:relative;
+}
+
+.area-header{
+  font-family:lato;
+  font-size:1.6em;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: capitalize;
+  display:inline-block;
+}
+
+/*Question card rules*/
+.card{
+  padding:0px;
+  margin:0px;
+  height:auto;
+}
+
+.card-content{
+  padding:0px;
+  margin:20px;
+}
+
+.actions{
+  border-bottom:1px solid rgba(0,0,0,.2);
+}
+
+.add{
+  position:absolute;
+  top:25px;
+  left:200px;
+}
+
+.delete, .update{
+  display:inline-block;
+}
+
+.add-icon, .action-img{
+  height:30px;
+}
+
+.action-img{
+  margin:10px 10px 0px 0px;
+}
+
+.question-title{
+  font-famiy:lato;
+  font-size:1.4em;
+  font-weight:bold;
+  text-transform: capitalize;
+}
+
+.question-answer{
+  font-family:roboto;
+  font-size:1.2em;
+  color:rgba(0,0,0,.75) !important;
+}
+
+/*QUESTION CREATION MODAL STRUCTURE RULES*/
+#QuestionCreation{
+  width:450px;
+}
+
+.deletion-modal{
+  width:450px; 
+}
+
+.modal-header{
+  font-family:lato;
+  font-size:1.2em;
+}
+
+.modal-description{
+  font-family:roboto;
+  font-size:1em;
+}

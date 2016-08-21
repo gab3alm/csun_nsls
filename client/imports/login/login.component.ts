@@ -9,7 +9,7 @@ import {Session} from 'meteor/session';
 import {EventModel} from '../../../both/models/eventmodel';
 import {Events} from '../../../both/collections/events';
 import {MaterializeDirective} from 'angular2-materialize';
-
+import {Tracker} from 'meteor/tracker';
 
 import template from './login.html';
 @Component({
@@ -30,6 +30,7 @@ export class LoginComponent extends MeteorComponent implements OnInit{
   phone:string; // member sign in
 
   success:boolean;
+  empty:any;
 
   // FORM ATTRIBUTES
   category:string;
@@ -45,6 +46,11 @@ export class LoginComponent extends MeteorComponent implements OnInit{
   ngOnInit(){
     this.subscribe('ActiveEvents', ()=>{
       this.ActiveEvents = Events.find();
+      // Once you fetch from a collectin it is no longer reactive
+      // using tracker makes it reactive
+      Tracker.autorun(()=>{
+        this.empty = this.ActiveEvents.fetch()[0]; 
+      });
     });
   }
 

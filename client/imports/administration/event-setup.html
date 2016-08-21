@@ -13,7 +13,7 @@
             <p class="event-name">{{event.name}}</p> 
             <p class="event-date">{{event.date}}</p>  
           </div>
-          <button (click)="closeEvent(event._id)" class="cust-btn status-btn tooltipped" materialize="tooltip" data-position="right" data-delay="50" data-tooltip="Close Event">Close</button>
+          <button (click)="closeEvent(event._id)" class="btn cust-btn status-btn tooltipped" materialize="tooltip" data-position="right" data-delay="50" data-tooltip="Close Event">Close</button>
         </li>
       </ul>  
     </div>
@@ -31,14 +31,15 @@
 <!-- Modal Structure -->
 <div id="NewEvent" class="modal">
   <div class="modal-content">
-    <h4>Create New Event</h4>
+    <div class="modal-header">Create New Event</div>
     <div class="row">
       <div class="input-field col s10 push-s1">
         <input [(ngModel)]="eventName" name="eventName" id="EventName" type="text" class="validate">
         <label for="EventName">Event Name</label>
+        <p class="additional-information">For speaker broadcast follow (Speaker Broadcast - Speaker's Name)</p>
       </div>
       <div class="center-align">
-        <button (click)="createNewEvent(eventName)" class="btn cust-btn modal-action modal-close">Submit</button>
+        <button (click)="createNewEvent(eventName)" [disabled]="!eventName" [ngClass]="{'cust-btn': eventName}" class="btn disabled modal-action modal-close">Submit</button>
       </div>
     </div>
   </div>

@@ -6,3 +6,23 @@
   text-align:right;
   text-transform: capitalize;
 }
+
+.cust-btn{
+  font-family:lato;
+  font-size:1.2em;
+  color:rgba(255,0,0,.5);
+  background-color:transparent;
+  border:2px solid rgba(255,0,0,.5);
+  border-radius:10px;
+  box-shadow: none;
+}
+
+.cust-btn:hover{
+  color:rgba(255,255,255,1);
+  background-color:rgba(255,0,0,.5);
+}
+
+.row{
+  margin:0px;
+  padding:0px;
+}

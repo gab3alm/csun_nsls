@@ -4,16 +4,10 @@
     <p class="welcome-message">welcome, {{username}}</p>
   </div>
   <!-- ADMIN MENU -->
-  <div class="row center-align">
-    <div class="col s4">
-      <button class="btn" [routerLink]="['setup']">Setup Event</button>
-    </div>
-    <div class="col s4">
-      <button class="btn" [routerLink]="['records']">Event Records</button>
-    </div>
-    <div class="col s4">
-      <button class="btn">Account Settings</button>
-    </div>
+  <div class="row right-align">
+    <button class="btn cust-btn" [routerLink]="['setup']">Setup</button>
+    <button class="btn cust-btn" [routerLink]="['records']">Records</button>
+    <button class="btn cust-btn" [routerLink]="['faq']">FAQ</button>
   </div>  
 
   <!-- ROUTER_OUTLET -->
