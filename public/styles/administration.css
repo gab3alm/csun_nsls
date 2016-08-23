@@ -8,8 +8,9 @@
 }
 
 .cust-btn{
+  padding:0px 10px 0px 10px;
   font-family:lato;
-  font-size:1.2em;
+  font-size:1em;
   color:rgba(255,0,0,.5);
   background-color:transparent;
   border:2px solid rgba(255,0,0,.5);

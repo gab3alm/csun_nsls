@@ -4,10 +4,12 @@
 }
 
 .title{
-  font-family:lato;
-  font-size:1.8em;
-  text-transform: uppercase;
-  display:inline-block;
+ font-family:lato;
+ font-size:1.8em;
+ font-weight:bold;
+ display:inline-block;
+ padding:0px;
+ margin:0px;
 }
 
 .event-title{
@@ -20,9 +22,19 @@
 
 .record-section{
   font-family:lato;
-  font-size:1em;
+  font-size:1.1em;
   text-transform: capitalize;
-  margin-left:10px;
+  box-shadow: none;
+  color:rgba(0,0,255,.5);
+  background-color:transparent;
+  border:2px solid rgba(0,0,255,.5);
+  border-radius: 10px;
+  padding:0px 10px 0px 10px;
+}
+
+.record-section:hover{
+  background-color:rgba(0,0,255,.25);
+  color:white;
 }
 
 .table-info{

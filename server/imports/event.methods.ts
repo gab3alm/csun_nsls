@@ -1,7 +1,11 @@
 import {Meteor} from 'meteor/meteor';
-import {Events} from './events';
-import {Attendee} from '../classes/attendee';
+import {Events} from '../../both/collections/events';
+import {BackupEvents} from '../../both/collections/backupEvents';
+import {Attendee} from '../../both/classes/attendee';
+import {EventModel} from '../../both/models/eventmodel';
 import {ServerSession} from 'meteor/matteodem:server-session';
+
+
 
 Meteor.methods({
   // Create a new event and make it ready for members to see it.
@@ -53,7 +57,14 @@ Meteor.methods({
 
   // delete the event (Permanent Deletion)
   deleteEvent:function(eventID:string){
+    backupEvent(eventID);
     Events.remove({'_id':eventID});
   }
 
 });
+
+// Backup events, just in case.
+function backupEvent(eventID:string){
+  var event = Events.find({'_id':eventID}).fetch()[0];
+  BackupEvents.insert(event);
+}  

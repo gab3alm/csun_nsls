@@ -47,7 +47,8 @@
 
 /*MODAL RULES*/
 #NewEvent{
-  width:500px;
+  width:auto;
+  max-width:500px;
   overflow:hidden;
 }
 

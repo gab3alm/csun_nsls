@@ -9,6 +9,5 @@ import template from './valuecard.html';
 
 export class ValuecardComponent{
   @Input() card;
-
   constructor(){}
 }

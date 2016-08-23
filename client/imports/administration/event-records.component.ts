@@ -41,6 +41,10 @@ export class EventrecordsComponent extends MeteorComponent implements OnInit{
     this.call('archiveEvent', EventID);
   }
 
+  deleteEvent(EventID){
+    this.call('deleteEvent', EventID);
+  }
+
   show(section){
     if(section == 'active'){
       this.ShowActive = true;

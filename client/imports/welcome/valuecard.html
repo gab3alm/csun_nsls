@@ -1,7 +1,9 @@
 <div *ngIf="card" class="col s12 m6 l3 animated slideInRight">
-  <div class="valuecard-container hoverable center-align">
-    <p class="card-value">{{card.value}}</p>
-    <img class="card-image" [src]="card.image" alt="card value">
-    <p class="card-description">{{card.description}}</p>
-  </div>  
+  <a target="_blank" [attr.href]="card.link">
+    <div class="valuecard-container hoverable center-align">
+      <p class="card-value">{{card.value}}</p>
+      <img class="card-image" [src]="card.image" alt="card value">
+      <p class="card-description">{{card.description}}</p>
+    </div>  
+  </a>
 </div>

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <p class="title">Event Records|</p>
+    <p class="title">Event Records</p>
     <button class="btn record-section" (click)="show('active')">active</button>
     <button class="btn record-section" (click)="show('archive')">archive</button>
   </div>
@@ -10,7 +10,7 @@
     <!-- ||||||||||||||||||||||||||||||||||||| -->
     <div *ngIf="ShowActive">
       <p class="section-title">Active Event Records</p>
-      <p *ngIf="!ActiveEvents" class="notice">there are no active events!</p>
+      <p *ngIf="" class="notice">there are no active events!</p>
       <ul *ngFor="let event of ActiveEvents" materialize="collapsible" class="collapsible hoverable" data-collapsible="accordion">
         <li>
           <div class="collapsible-header">
@@ -58,6 +58,7 @@
           <div class="collapsible-header">
             <p class="event-title">{{event.name}} <br> <small>{{event.date}}</small></p>
             <div class="btn-holder right-align">
+              <button (click)="deleteEvent(event._id)" class="btn cust-btn">Delete</button>
               <button *ngIf="event.status != 'active'" (click)="activateEvent(event._id)" class="btn cust-btn">Activate</button>
             </div>
           </div>

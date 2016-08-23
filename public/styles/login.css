@@ -55,3 +55,21 @@
   font-size:1.5em;
   color:rgba(0,0,0,.85);
 }
+
+
+/*MEMBER EVENT SIGN IN RULES*/
+.event-name{
+  font-family:lato;
+  font-size:1.5em;
+  color:rgba(0,0,0,.85);
+  padding:0px;
+  margin:0px;
+}
+
+.event-date{
+  font-family: karla;
+  font-size:1.2em;
+  color:rgba(0,0,0,.5);
+  padding:0px;
+  margin:0px;
+}

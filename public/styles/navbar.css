@@ -12,7 +12,7 @@ nav{
 
 .nsls-logo{
   z-index:11;
-  position:fixed;
+  position:absolute;
   top:10px;
   left:10px;
   height:120px;
