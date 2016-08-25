@@ -44,4 +44,13 @@ export class FaqControlComponent extends MeteorComponent implements OnInit{
   updateQuestion(questionID, question, answer){
     this.call('updateQuestion', questionID, question, answer);
   }
+
+  setupUpdate(question:string, answer:string){
+    this.question = question;
+    this.answer = answer;
+  }
+
+  reset(){
+    this.question = this.answer = '';
+  }
 }

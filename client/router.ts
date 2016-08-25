@@ -7,6 +7,7 @@ import {EventsetupComponent} from './imports/administration/event-setup.componen
 import {EventrecordsComponent} from './imports/administration/event-records.component';
 import {FaqComponent} from './imports/faq/faq.component';
 import {FaqControlComponent} from './imports/administration/faq-control.component';
+import {RequirementsComponent} from './imports/requirements/requirements.component';
 
 const routes : RouterConfig = [
   {path:'',component:WelcomeComponent},
@@ -17,7 +18,8 @@ const routes : RouterConfig = [
     {path:'setup', component: EventsetupComponent},
     {path:'records', component: EventrecordsComponent},
     {path:'faq', component:FaqControlComponent}
-  ]}
+  ]},
+  {path:'requirements', component:RequirementsComponent}
 ];
 
 export const APP_ROUTER = [provideRouter(routes)];

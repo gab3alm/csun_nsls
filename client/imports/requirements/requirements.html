@@ -1,1 +1,101 @@
-<p>Welcome to the requirements</p>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <!-- INDUCTION REQUIREMENTS -->
+      <div class="requirement-container">
+        <p class="area-title">Chapter Induction Requirements</p>
+        <p class="description">
+          In order to become an inducted member of the NSLS CSUN Chapter, you have to attend the following events
+        </p>
+
+        <!-- INDUCTION STEP CARD -->
+        <div class="row">
+         <div *ngFor="let card of inductionSteps" class="col s12 m6 l4">
+           <!-- CARD FRONT SIDE -->
+           <div *ngIf="!card.flip" class="card animated bounce">
+            <div class="card-image">
+              <img class="step-image animated flip" [attr.src]="card.image">
+            </div>
+            <div class="card-content">
+              <p class="step-name">{{card.title}}</p>
+              <p class="step-requirement">{{card.requirement}}</p>
+            </div>
+            <div class="card-action">
+              <a (click)="cardMotion(card.step, card.flip)">Learn More</a>
+            </div>
+          </div>
+
+          <!-- CARD BACK SIDE -->
+          <div *ngIf="card.flip" class="card animated flip">
+            <div class="card-content">
+              <p class="step-name back">{{card.title}}</p>
+              <p class="event-description">{{card.description}}</p>
+            </div>
+            <div class="card-action">
+              <a (click)="cardMotion(card.step, card.flip)">Go Back</a>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+
+
+
+
+    <!-- NELA REQUIREMENTS -->
+    <div class="requirement-container">
+      <p class="area-title">National Engaged Leader Award (NELA) Requirements</p>
+      <p class="description">
+      In order to obtain the National Engaged Leader Award (NELA) you need to accomplish these additional reqruirements.
+      </p>
+
+      <!-- INDUCTION STEP CARD -->
+      <div class="row">
+       <div *ngFor="let card of nelaSteps" class="col s12 m6 l4">
+         <!-- CARD FRONT SIDE -->
+         <div *ngIf="!card.flip" class="card animated bounce">
+          <div class="card-image">
+            <img class="step-image animated flip" [attr.src]="card.image">
+          </div>
+          <div class="card-content">
+            <p class="step-name">{{card.title}}</p>
+            <p class="step-requirement">{{card.requirement}}</p>
+          </div>
+          <div class="card-action">
+            <a (click)="cardMotion(card.step, card.flip)">Learn More</a>
+          </div>
+        </div>
+
+        <!-- CARD BACK SIDE -->
+        <div *ngIf="card.flip" class="card animated flip">
+          <div class="card-content">
+            <p class="step-name back">{{card.title}}</p>
+            <p class="event-description">{{card.description}}</p>
+          </div>
+          <div class="card-action">
+            <a (click)="cardMotion(card.step, card.flip)">Go Back</a>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+</div>

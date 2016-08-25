@@ -14,7 +14,7 @@
           <div class="actions right-align">
             <!-- UPDATE BUTTON -->
             <div class="tooltipped update" materialize="tooltip" data-position="left" data-delay="50" data-tooltip="Update">
-              <img src="images/update.svg" class="action-img modal-trigger" materialize="leanModal" [materializeParams]="[{dismissible: true}]" [attr.href]="'#'+q._id+'update'"> 
+              <img (click)="setupUpdate(q.question, q.answer)" src="images/update.svg" class="action-img modal-trigger" materialize="leanModal" [materializeParams]="[{dismissible: false}]" [attr.href]="'#'+q._id+'update'"> 
             </div>
             <!-- DELETE BUTTON -->
             <div class="tooltipped delete" materialize="tooltip" data-position="bottom" data-delay="50" data-tooltip="Delete">
@@ -46,16 +46,16 @@
           <p class="modal-header">Update Question</p>
           <!-- QUESTION -->
           <div class="input-field col s12">
-          <textarea [(ngModel)]="question" name="question" id="question" class="materialize-textarea">hEllo asjdklajslk</textarea>
-            <label for="question">Question</label>
+            <textarea [(ngModel)]="question" name="question" id="question" class="materialize-textarea" materialize="val">{{question}}</textarea>
+            <label class="active" for="question">Question</label>
           </div>
           <!-- ANSWER -->
           <div class="input-field col s12">
-            <textarea [(ngModel)]="answer" name="answer" id="answer" class="materialize-textarea">{{q.answer}}</textarea>
-            <label for="answer">Answer</label>
+            <textarea [(ngModel)]="answer" name="answer" id="answer" class="materialize-textarea">{{answer}}</textarea>
+            <label class="active" for="answer">Answer</label>
           </div>
           <div class="modal-footer">
-            <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a (click)="reset()" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
             <a (click)="updateQuestion(q._id, question, answer)" class="modal-action modal-close waves-effect waves-green btn-flat">Yup</a>
           </div>
         </div>

@@ -1,0 +1,44 @@
+.requirement-container{
+  margin-top:35px;
+}
+
+.area-title{
+  font-family:lato;
+  font-size:1.8em;
+  color:rgba(0,0,0,.85);
+  margin-bottom:0px;
+  padding:0px;
+}
+
+.description{
+  font-family: lato;
+  font-size:1.35em;
+  color:rgba(0,0,0,.65);
+}
+
+/*CARD RULES*/
+.card-title{
+  font-family:lato;
+  font-size:1.5em;
+  color:rgba(0,0,0,.85) !important;
+}
+
+.step-image{
+  height:200px !important;
+  width:200px !important;
+  margin-left:25%;
+}
+
+.step-name{
+  font-family:lato;
+  font-size:1.5em;
+  color:rgba(0,0,0,.85);
+  text-transform: capitalize;
+}
+
+.step-requirement{
+  font-family:karla;
+  font-size:1.3em;
+  color:rgba(0,0,0,.65);
+  text-transform: capitalize;
+}
