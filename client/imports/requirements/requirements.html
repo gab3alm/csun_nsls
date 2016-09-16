@@ -11,6 +11,7 @@
         <!-- INDUCTION STEP CARD -->
         <div class="row">
          <div *ngFor="let card of inductionSteps" class="col s12 m6 l4">
+           
            <!-- CARD FRONT SIDE -->
            <div *ngIf="!card.flip" class="card animated bounce">
             <div class="card-image">
@@ -35,6 +36,7 @@
               <a (click)="cardMotion(card.step, card.flip)">Go Back</a>
             </div>
           </div>
+
         </div>
       </div>  
     </div>

@@ -20,10 +20,10 @@ export class AdministrationComponent implements OnInit{
   ngOnInit(){
     this.username = Session.get('USERNAME');
     // If user is not legit, return them to landing page
-    // if(!(!!Meteor.user())){
-      // this.router.navigate(['']);
-    // }else{
-      // this.username = Session.get('USERNAME');
-    // }
+    if(!(!!Meteor.user())){
+      this.router.navigate(['']);
+    }else{
+      this.username = Session.get('USERNAME');
+    }
   }
 }

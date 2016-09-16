@@ -8,11 +8,14 @@ import {EventrecordsComponent} from './imports/administration/event-records.comp
 import {FaqComponent} from './imports/faq/faq.component';
 import {FaqControlComponent} from './imports/administration/faq-control.component';
 import {RequirementsComponent} from './imports/requirements/requirements.component';
+import {RegisteredComponent} from './imports/login/registered.component';
 
-const routes : RouterConfig = [
-  {path:'',component:WelcomeComponent},
+const routes : RouterConfig =
+[
+  {path:'', component:WelcomeComponent},
   {path:'login', component:LoginComponent},
   {path:'faq', component:FaqComponent},
+  {path:'success', component:RegisteredComponent},
   {path:'admin', component:AdministrationComponent, children:[
     {path:'', component:AdminWelcomeComponent}, 
     {path:'setup', component: EventsetupComponent},

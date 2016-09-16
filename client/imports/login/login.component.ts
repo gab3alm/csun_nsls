@@ -90,7 +90,7 @@ export class LoginComponent extends MeteorComponent implements OnInit{
 
   eventSignIn(eventID:string, ticket:string, firstname:string, lastname:string, email:string, phone:string){
     this.call('eventSignIn', eventID, ticket, firstname, lastname, email, phone);
-    this.router.navigate(['login']);
+    this.router.navigate(['success']);
     this.success = true;
   }
 
