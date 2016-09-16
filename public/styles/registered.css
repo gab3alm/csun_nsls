@@ -1,0 +1,23 @@
+.success{
+  font-family:lato;
+  font-size:1.5em;
+  color:rgba(0,0,0,.9);
+  margin:10px;
+}
+
+.success-container{
+  margin-top:50px;
+}
+
+.img-success{
+  height:100px;
+}
+
+.btn-cust{
+  border:2px solid rgba(0,255,0,1);
+  color:rgba(0,255,0,1);
+  font-family:lato;
+  font-size:1.2em;
+  background-color:transparent;
+  border-radius: 20px;
+}

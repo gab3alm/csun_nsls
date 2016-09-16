@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
-    <p class="success">You have successfully registered for this event!</p>
-    <p class="success animated bounce">Hope you enjoy it</p>
-    <button class="btn">Go Back</button>
+    <div class="success-container center-align">
+      <img class="img-success animated shake" src="images/success.svg" alt="">
+      <p class="success animated bounce">You have successfully registered for this event!</p>
+      <p class="success animated bounce">Hope you enjoy it</p>
+      <button class="btn btn-cust" (click)="navigate()">Go Back</button>  
+    </div>
   </div>
 </div>
