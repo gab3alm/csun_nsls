@@ -1,0 +1,22 @@
+.header-section{
+  margin-top:20px;
+}
+
+.section-title{
+  font-family:lato;
+  font-size:2em;
+  text-transform:capitalize;
+  margin-bottom:0px;
+}
+
+.section-description{
+  font-family:karla;
+  font-size:1em;
+  margin:0px;
+}
+
+.section-message{
+  font-family:karla;
+  font-size:1.3em;
+  text-align:left;
+}

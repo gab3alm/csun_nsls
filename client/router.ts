@@ -9,6 +9,7 @@ import {FaqComponent} from './imports/faq/faq.component';
 import {FaqControlComponent} from './imports/administration/faq-control.component';
 import {RequirementsComponent} from './imports/requirements/requirements.component';
 import {RegisteredComponent} from './imports/login/registered.component';
+import {SNTlandComponent} from './imports/snt_land/snt-land.component';
 
 const routes : RouterConfig =
 [
@@ -22,7 +23,8 @@ const routes : RouterConfig =
     {path:'records', component: EventrecordsComponent},
     {path:'faq', component:FaqControlComponent}
   ]},
-  {path:'requirements', component:RequirementsComponent}
+  {path:'requirements', component:RequirementsComponent},
+  {path:'snt', component: SNTlandComponent}
 ];
 
 export const APP_ROUTER = [provideRouter(routes)];
