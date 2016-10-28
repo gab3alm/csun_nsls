@@ -1,78 +1,58 @@
-<div class="container-fluid">
-  <div class="row">
+<!-- |||||||||||||||||||||||||||||| -->
+<!-- Individual SNT group card-->
+<!-- |||||||||||||||||||||||||||||| -->
 
-    <!-- SIDE BAR SECTION -->
-    <!-- MD and LG only SECTION -->
-    <div class="col m3 hide-on-small-only">
-      <section class="header-section center-align">
-        <p class="section-title">SNT LAND</p>
-        <p class="section-description">
-          A place for those looking for a Success Networking Team (SNT).
-          Whether you wish to create your own SNT or join another, you are one step away from meeting great people.
-        </p>
-        <button materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#snt-group-creation" class="modal-trigger btn">Create New SNT</button>
-      </section>
-    </div>
-    <!-- END SIDE BAR SECTION -->
-
-
-    <!-- START OF SNT LAND - MAIN AREA -->
-    <div class="col m9">
-      <section class="main-area">
-        <p class="section-title">
-          available groups
-        </p>
-        <!-- 3 people minimum, don't do 2 because then that's weak. Weak!!! alright, I'm okay now.-->
-        <p class="section-description">
-          Once your team has 3 members, make sure to contact them in order to setup your Success Networking Team meetings.
-        </p>
-      </section>
+<div class="col s12 m6 l4">
+  <div class="card hoverable">
+    <div class="card-content">
+      <!-- |||||||||||||||||||||||||||||| -->
+      <!-- CARD HEADER -->
+      <!-- |||||||||||||||||||||||||||||| -->
+      <div class="card-header">
+        <img class="team-image" src="images/snt/team.svg" alt="team image">
+        <span class="card-title activator">Buckling Ip</span>
+        <p><a href="#">Contact Group Members</a></p>
+      </div>
+      <hr>
       
-      <!-- Available groups -->
-      <section class="snt-groups">
-        <div class="row">
-          <snt-group-card></snt-group-card>
-          <snt-group-card></snt-group-card>
-          <snt-group-card></snt-group-card>
+      <!-- |||||||||||||||||||||||||||||| -->
+      <!-- SNT GROUP MEMBERS - START      -->
+      <!-- |||||||||||||||||||||||||||||| -->
+      <div class="group-members">
+        <p class="description">current members</p>
+      </div>
+      <!-- individual member card - START-->
+      <div class="user-chip">
+        <img class="user-image" src="images/snt/person.svg" alt="Contact Person">
+        <div class="user-information">
+          <div class="name flow-text">Jane Doe</div>
+          <div class="email flow-text">jane.doe.891@my.csun.edu</div>
+          <div class="availability flow-text">Availability</div>          
         </div>
-      </section>
+      </div>
+
+      <!-- |||||||||||||||||||||||||||||| -->
+      <!-- SNT GROUP MEMBERS - END        -->
+      <!-- |||||||||||||||||||||||||||||| -->
+      <div class="row center-align">
+        <button materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#snt-group-joining" class="modal-trigger btn cust-btn">Join SNT</button>
+      </div>
       
     </div>
-    <!-- END OF SNT LAND - MAIN AREA -->
-  </div>
+  </div>  
 </div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<!-- |||||||||||||||||||||||||||||||||||| -->
-<!-- CREATE NEW SNT GROUP - MODAL START   -->
-<!-- |||||||||||||||||||||||||||||||||||| -->
-
+<!-- ||||||||||||||||||||||||||||||||||-->
+<!-- ||JOIN SNT GROUP MODAL - START    -->
+<!-- ||||||||||||||||||||||||||||||||||-->
 <!-- Modal Structure -->
-<div id="snt-group-creation" class="modal">
+<div id="snt-group-joining" class="modal">
   <div class="modal-content">
-    <h4>New Success Networking Team</h4>
+    <h4>Please enter your information</h4>
     <div class="row">
-      <p class="section-description">Group Information</p>
-      <!-- GROUP NAME START -->
-      <div class="input-field col s12">
-        <input placeholder="Make it interesting" id="group_name" type="text" class="validate">
-        <label for="group_name">Group Name</label>
-      </div>
-      <!-- GROUP NAME END -->
-
 
       <p class="section-description">Basic personal information</p>
       <!-- FIRST NAME START -->
@@ -127,17 +107,21 @@
         <label for="sunday">Sunday</label>
       </div>
       <!-- AVAILABILITY END -->
-
-
-
     </div>  
 
-
+    
 
 
 
   </div>
   <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a href="#!" class="modal-action modal-close btn waves-effect waves-green">Join SNT</a>
   </div>
 </div>
+
+
+
+<!-- ||||||||||||||||||||||||||||||||||-->
+<!-- ||JOIN SNT GROUP MODAL - END      -->
+<!-- ||||||||||||||||||||||||||||||||||-->
+

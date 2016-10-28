@@ -1,22 +1,50 @@
+/*SECOND DESIGN RULES*/
 .header-section{
-  margin-top:20px;
+  background-image:url('images/snt/side_background.jpg');
+  height:100vh;
+  background-position: center;
+  padding:70px 0px 0px 0px;
 }
 
+.main-area{
+  margin-top:70px;
+}
+
+/*FIRST DESIGN RULES*/
 .section-title{
   font-family:lato;
   font-size:2em;
   text-transform:capitalize;
-  margin-bottom:0px;
+  margin:0px;
 }
 
 .section-description{
   font-family:karla;
   font-size:1em;
   margin:0px;
+  padding:10px;
 }
 
 .section-message{
   font-family:karla;
-  font-size:1.3em;
+  font-size:1.1em;
   text-align:left;
+  margin-top:40px;
+}
+
+.disclaimer, .important-notice{
+  font-family:lato;
+  font-size:1em;
+}
+
+.important-notice{
+  text-transform:capitalize;
+  color:red;
+  text-decoration:underline;
+}
+
+.disclaimer-section{
+  position:absolute;
+  bottom:0px;
+  left:0px;
 }
