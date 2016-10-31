@@ -17,6 +17,7 @@
 /*USER CHIPS RULES*/
 .chip{
   margin:5px;
+  text-transform: capitalize;
 }
 
 .cust-btn{

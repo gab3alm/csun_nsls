@@ -43,9 +43,9 @@
       <!-- Available groups -->
       <section class="snt-groups">
         <div class="row">
-          <snt-group-card></snt-group-card>
-          <snt-group-card></snt-group-card>
-          <snt-group-card></snt-group-card>
+          <div *ngFor="let g of snt_groups">
+            <snt-group-card [group]="g"></snt-group-card>
+          </div>
         </div>
       </section>
       
@@ -80,7 +80,7 @@
       <p class="section-description">Group Information</p>
       <!-- GROUP NAME START -->
       <div class="input-field col s12">
-        <input placeholder="Make it interesting" id="group_name" type="text" class="validate">
+        <input [(ngModel)]="group_name" name="group_name" placeholder="Make it interesting" id="group_name" type="text" class="validate">
         <label for="group_name">Group Name</label>
       </div>
       <!-- GROUP NAME END -->
@@ -89,21 +89,21 @@
       <p class="section-description">Basic personal information</p>
       <!-- FIRST NAME START -->
       <div class="input-field col s12">
-        <input id="first_name" type="text" class="validate">
+        <input [(ngModel)]="first_name" name="first_name" id="first_name" type="text" class="validate">
         <label for="first_name">first name</label>
       </div>
       <!-- FIRST NAME END -->
 
       <!-- LAST NAME START -->
       <div class="input-field col s12">
-        <input id="last_name" type="text" class="validate">
+        <input [(ngModel)]="last_name" name="last_name" id="last_name" type="text" class="validate">
         <label for="last_name">last name</label>
       </div>
       <!-- LAST NAME END -->
 
       <!-- EMAIL START -->
       <div class="input-field col s12">
-        <input id="email" type="text" class="validate">
+        <input [(ngModel)]="email" name="email" id="email" type="text" class="validate">
         <label for="email">email</label>
       </div>
       <!-- EMAIL END -->
@@ -111,31 +111,31 @@
       <!-- AVAILABILITY START -->
       <p class="section-description">Availability</p>
       <div class="input-field col s12 m4">
-        <input placeholder="e.g. - 9:30 AM - 1:15 PM" id="monday" type="text" class="validate">
+        <input [(ngModel)]="availability[0]" name="monday_a" placeholder="e.g. - 9:30 AM - 1:15 PM" id="monday" type="text" class="validate">
         <label for="monday">Monday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="tuesday" type="text" class="validate">
+        <input [(ngModel)]="availability[1]" name="tuesday_a" id="tuesday" type="text" class="validate">
         <label for="tuesday">Tuesday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="wednesday" type="text" class="validate">
+        <input [(ngModel)]="availability[2]" name="wednesday_a" id="wednesday" type="text" class="validate">
         <label for="wednesday">Wednesday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="thursday" type="text" class="validate">
+        <input [(ngModel)]="availability[3]" name="thursday_a" id="thursday" type="text" class="validate">
         <label for="thursday">thursday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="friday" type="text" class="validate">
+        <input [(ngModel)]="availability[4]" name="friday_a" id="friday" type="text" class="validate">
         <label for="friday">Friday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="saturday" type="text" class="validate">
+        <input [(ngModel)]="availability[5]" name="saturday_a" id="saturday" type="text" class="validate">
         <label for="saturday">Saturday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="sunday" type="text" class="validate">
+        <input [(ngModel)]="availability[6]" name="sunday_a" id="sunday" type="text" class="validate">
         <label for="sunday">Sunday</label>
       </div>
       <!-- AVAILABILITY END -->
@@ -150,6 +150,6 @@
 
   </div>
   <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a (click)="createNewSntGroup(group_name, first_name, last_name, email, availability)" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
   </div>
 </div>

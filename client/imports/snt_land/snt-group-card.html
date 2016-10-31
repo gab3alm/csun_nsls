@@ -9,9 +9,9 @@
       <!-- CARD HEADER -->
       <!-- |||||||||||||||||||||||||||||| -->
       <div class="card-header">
-        <span class="card-title activator">Buckling Ip</span>
+        <span class="card-title activator">{{group.group_name}}</span>
         <p><a href="#">Contact All Members</a></p>
-        <p><a href="#">See Group Availability</a></p>
+        <p><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#snt-availability" class="modal-trigger">See Group Availability</a></p>
       </div>
       <hr>
       
@@ -22,39 +22,13 @@
         <p class="description">current members</p>
 
         <!-- individual member card - START-->
-        <div class="chip">
-          <img src="https://api.adorable.io/avatars/40/gabriel@sdakl.io.png" alt="Contact Person">
-          Jane Doe
-        </div>
-
-        <div class="chip">
-          <img src="https://api.adorable.io/avatars/40/gabriel@testing.io.png" alt="Contact Person">
-          Jane Doe
-        </div>
-        <div class="chip">
-          <img src="https://api.adorable.io/avatars/40/gabriel@testing.io.png" alt="Contact Person">
-          Jane Doe
-        </div>
-
-        <div class="chip">
-          <img src="https://api.adorable.io/avatars/40/gabriel@testing.io.png" alt="Contact Person">
-          Jane Doe
-        </div>
-
-        <div class="chip">
-          <img src="https://api.adorable.io/avatars/40/gabriel@testing.io.png" alt="Contact Person">
-          Jane Doe
-        </div>
-
-        <div class="chip">
-          <img src="https://api.adorable.io/avatars/40/gabriel@testing.io.png" alt="Contact Person">
-          Jane Doe
+        <div *ngFor="let member of group.members" class="group-members-holder">
+          <div class="chip">
+            <img [src]="'https://api.adorable.io/avatars/40/'+member.firstname+'@'+member.lastname+'.png'">
+            {{member.firstname}} {{member.lastname}}
+          </div>  
         </div>
         
-        <div class="chip">
-          <img src="https://api.adorable.io/avatars/40/gabriel@testing.io.png" alt="Contact Person">
-          Jane Doe
-        </div>
       </div>
 
 
@@ -84,21 +58,21 @@
       <p class="section-description">Basic personal information</p>
       <!-- FIRST NAME START -->
       <div class="input-field col s12">
-        <input id="first_name" type="text" class="validate">
+        <input [(ngModel)]="firstname" name="firstname" id="first_name" type="text" class="validate">
         <label for="first_name">first name</label>
       </div>
       <!-- FIRST NAME END -->
 
       <!-- LAST NAME START -->
       <div class="input-field col s12">
-        <input id="last_name" type="text" class="validate">
+        <input [(ngModel)]="lastname" name="lastname" id="last_name" type="text" class="validate">
         <label for="last_name">last name</label>
       </div>
       <!-- LAST NAME END -->
 
       <!-- EMAIL START -->
       <div class="input-field col s12">
-        <input id="email" type="text" class="validate">
+        <input [(ngModel)]="email" name="email" id="email" type="text" class="validate">
         <label for="email">email</label>
       </div>
       <!-- EMAIL END -->
@@ -106,31 +80,31 @@
       <!-- AVAILABILITY START -->
       <p class="section-description">Availability</p>
       <div class="input-field col s12 m4">
-        <input placeholder="e.g. - 9:30 AM - 1:15 PM" id="monday" type="text" class="validate">
+        <input [(ngModel)]="availability[0]" name="a_monday" placeholder="e.g. - 9:30 AM - 1:15 PM" id="monday" type="text" class="validate">
         <label for="monday">Monday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="tuesday" type="text" class="validate">
+        <input [(ngModel)]="availability[1]" name="a_tuesday" id="tuesday" type="text" class="validate">
         <label for="tuesday">Tuesday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="wednesday" type="text" class="validate">
+        <input [(ngModel)]="availability[2]" name="a_wednesday" id="wednesday" type="text" class="validate">
         <label for="wednesday">Wednesday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="thursday" type="text" class="validate">
+        <input [(ngModel)]="availability[3]" name="a_thursday" id="thursday" type="text" class="validate">
         <label for="thursday">thursday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="friday" type="text" class="validate">
+        <input [(ngModel)]="availability[4]" name="a_friday" id="friday" type="text" class="validate">
         <label for="friday">Friday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="saturday" type="text" class="validate">
+        <input [(ngModel)]="availability[5]" name="a_saturday" id="saturday" type="text" class="validate">
         <label for="saturday">Saturday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input id="sunday" type="text" class="validate">
+        <input [(ngModel)]="availability[6]" name="a_sunday" id="sunday" type="text" class="validate">
         <label for="sunday">Sunday</label>
       </div>
       <!-- AVAILABILITY END -->
@@ -142,12 +116,47 @@
 
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close btn waves-effect waves-green">Join SNT</a>
+    <a (click)="addToSntGroup(group._id, firstname, lastname, email, availability)" class="modal-action modal-close btn waves-effect waves-green">Join SNT</a>
   </div>
 </div>
+<!-- ||||||||||||||||||||||||||||||||||-->
+<!-- ||JOIN SNT GROUP MODAL - END      -->
+<!-- ||||||||||||||||||||||||||||||||||-->
 
 
 
+
+
+<!-- ||||||||||||||||||||||||||||||||||-->
+<!-- ||GROUP AVAILABILITY MODAL - START    -->
+<!-- ||||||||||||||||||||||||||||||||||-->
+<!-- Modal Structure -->
+<div id="snt-availability" class="modal">
+  <div class="modal-content">
+    <h4>{{group.group_name}}</h4>
+    <div class="row">
+      <p class="section-description">Group Availability</p>
+      <div *ngFor="let member of group.members" class="schedule-holder">
+        <div class="col s12 m4 l4 ">
+          <p class="member-name">{{member.firstname}} {{member.lastname}}</p>
+          <ul>
+            <li>Monday:     {{member.availability[0]}}</li>
+            <li>Tuesday:    {{member.availability[1]}}</li>
+            <li>Wednesday:  {{member.availability[2]}}</li>
+            <li>Thursday:   {{member.availability[3]}}</li>
+            <li>Friday:     {{member.availability[4]}}</li>
+            <li>Saturday:   {{member.availability[5]}}</li>
+            <li>Sunday:     {{member.availability[6]}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <div class="modal-footer">
+    <button class="modal-trigger modal-close btn cust-btn">Cancel</button>
+    <button materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#snt-group-joining" class="modal-trigger modal-close btn cust-btn">Join SNT</button>
+  </div>
+</div>
 <!-- ||||||||||||||||||||||||||||||||||-->
 <!-- ||JOIN SNT GROUP MODAL - END      -->
 <!-- ||||||||||||||||||||||||||||||||||-->
