@@ -28,3 +28,35 @@
   box-shadow: none;
 }
 /*USER CHIPS END*/
+
+
+/*GROUP AVAILABILITY - START*/
+.group-name{
+  font-family:lato;
+  font-size:2em;
+  text-align:center;
+  font-weight:bold;
+}
+
+.member-name{
+  font-family:lato;
+  font-size:1.5em;
+  text-transform: capitalize;
+}
+
+.group-availability{
+  list-style-type:circle;
+}
+
+.day{
+  font-family:karla;
+  text-transform: uppercase;
+  font-size:1em;
+  text-align:center;
+}
+
+.times{
+  font-weight:bold;
+  text-transform: capitalize;
+}
+/*GROUP AVAILABILITY - END*/

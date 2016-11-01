@@ -10,7 +10,7 @@
       <!-- |||||||||||||||||||||||||||||| -->
       <div class="card-header">
         <span class="card-title activator">{{group.group_name}}</span>
-        <p><a href="#">Contact All Members</a></p>
+        <p><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#group-message" class="modal-trigger">Contact All Members</a></p>
         <p><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#snt-availability" class="modal-trigger">See Group Availability</a></p>
       </div>
       <hr>
@@ -28,7 +28,6 @@
             {{member.firstname}} {{member.lastname}}
           </div>  
         </div>
-        
       </div>
 
 
@@ -55,25 +54,25 @@
     <h4>Please enter your information</h4>
     <div class="row">
 
-      <p class="section-description">Basic personal information</p>
+      <p class="description">Basic personal information</p>
       <!-- FIRST NAME START -->
       <div class="input-field col s12">
         <input [(ngModel)]="firstname" name="firstname" id="first_name" type="text" class="validate">
-        <label for="first_name">first name</label>
+        <label for="first_name">Firstname</label>
       </div>
       <!-- FIRST NAME END -->
 
       <!-- LAST NAME START -->
       <div class="input-field col s12">
         <input [(ngModel)]="lastname" name="lastname" id="last_name" type="text" class="validate">
-        <label for="last_name">last name</label>
+        <label for="last_name">Lastname</label>
       </div>
       <!-- LAST NAME END -->
 
       <!-- EMAIL START -->
       <div class="input-field col s12">
         <input [(ngModel)]="email" name="email" id="email" type="text" class="validate">
-        <label for="email">email</label>
+        <label for="email">Email</label>
       </div>
       <!-- EMAIL END -->
 
@@ -100,11 +99,11 @@
         <label for="friday">Friday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input [(ngModel)]="availability[5]" name="a_saturday" id="saturday" type="text" class="validate">
+        <input [(ngModel)]="availability[5]" name="a_saturday" placeholder="e.g. - Not Available" id="saturday" type="text" class="validate">
         <label for="saturday">Saturday</label>
       </div>
       <div class="input-field col s12 m4">
-        <input [(ngModel)]="availability[6]" name="a_sunday" id="sunday" type="text" class="validate">
+        <input [(ngModel)]="availability[6]" name="a_sunday" placeholder="e.g. - 1:00 PM - 4:50 PM" id="sunday" type="text" class="validate">
         <label for="sunday">Sunday</label>
       </div>
       <!-- AVAILABILITY END -->
@@ -133,20 +132,20 @@
 <!-- Modal Structure -->
 <div id="snt-availability" class="modal">
   <div class="modal-content">
-    <h4>{{group.group_name}}</h4>
+    <h4 class="group-name">{{group.group_name}}</h4>
     <div class="row">
-      <p class="section-description">Group Availability</p>
+      <p class="description">Group Availability</p>
       <div *ngFor="let member of group.members" class="schedule-holder">
-        <div class="col s12 m4 l4 ">
+        <div class="col s12 m4 l3 center-align">
           <p class="member-name">{{member.firstname}} {{member.lastname}}</p>
-          <ul>
-            <li>Monday:     {{member.availability[0]}}</li>
-            <li>Tuesday:    {{member.availability[1]}}</li>
-            <li>Wednesday:  {{member.availability[2]}}</li>
-            <li>Thursday:   {{member.availability[3]}}</li>
-            <li>Friday:     {{member.availability[4]}}</li>
-            <li>Saturday:   {{member.availability[5]}}</li>
-            <li>Sunday:     {{member.availability[6]}}</li>
+          <ul class="group-availability">
+            <li class="day">Mon:  <span class="times">{{member.availability[0]}}</span></li>
+            <li class="day">Tue:  <span class="times">{{member.availability[1]}}</span></li>
+            <li class="day">Wed:  <span class="times">{{member.availability[2]}}</span></li>
+            <li class="day">Thu:  <span class="times">{{member.availability[3]}}</span></li>
+            <li class="day">Fri:  <span class="times">{{member.availability[4]}}</span></li>
+            <li class="day">Sat:  <span class="times">{{member.availability[5]}}</span></li>
+            <li class="day">Sun:  <span class="times">{{member.availability[6]}}</span></li>
           </ul>
         </div>
       </div>
@@ -158,6 +157,34 @@
   </div>
 </div>
 <!-- ||||||||||||||||||||||||||||||||||-->
-<!-- ||JOIN SNT GROUP MODAL - END      -->
+<!-- ||GROUP AVAILABILITY MODAL - END      -->
 <!-- ||||||||||||||||||||||||||||||||||-->
 
+
+<!-- ||||||||||||||||||||||||||||||||||-->
+<!-- ||GROUP MESSAGE SEND - START    -->
+<!-- ||||||||||||||||||||||||||||||||||-->
+<!-- Modal Structure -->
+<div id="group-message" class="modal">
+  <div class="modal-content">
+    <h4>Sending Message to {{group.group_name}}</h4>
+    <div class="row">
+      <p class="section-description">Only members of this group are able to send out message to the group. If you wish to message this group, please make sure to join it before attempting to send out a message.</p>
+      <div class="input-field col s12">
+        <textarea [(ngModel)]="message" name="message" id="message_area" class="materialize-textarea"></textarea>
+        <label for="message_area">Enter Your Message</label>
+      </div>
+      <p class="information"></p>
+      <div class="input-field col s12 m4">
+        <input [(ngModel)]="message_auth_code" name="message_auth_code" id="message_auth_code" type="text" class="validate">
+        <label for="message_auth_code">Auth Code</label>
+      </div>
+    </div>  
+  </div>
+  <div class="modal-footer">
+    <button (click)="sendGroupMessage(message_auth_code, group.members, message)" class="modal-trigger modal-close btn cust-btn">Send Message</button>
+  </div>
+</div>
+<!-- ||||||||||||||||||||||||||||||||||-->
+<!-- ||GROUP MESSAGE SEND - END      -->
+<!-- ||||||||||||||||||||||||||||||||||-->

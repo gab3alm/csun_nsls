@@ -21,6 +21,8 @@ export class SNTgroupCardComponent extends MeteorComponent implements OnInit{
   firstname:string;
   lastname:string;
   email:string;
+  message_auth_code: string;
+  message:string;
   // array to cover week availability
   availability:string[] = new Array(6);
 
@@ -38,6 +40,10 @@ export class SNTgroupCardComponent extends MeteorComponent implements OnInit{
 
   ngOnInit(){
 
+  }
+
+  sendGroupMessage(auth_code:string, recipients:snt_member[], message:string,){
+    this.call('sendGroupMessageEmail', auth_code, recipients, message);
   }
 
   //script from Mistonline.in (Please dont remove this line)
