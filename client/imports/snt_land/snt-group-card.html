@@ -10,8 +10,8 @@
       <!-- |||||||||||||||||||||||||||||| -->
       <div class="card-header">
         <span class="card-title activator">{{group.group_name}}</span>
-        <p><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#group-message" class="modal-trigger">Contact All Members</a></p>
-        <p><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#snt-availability" class="modal-trigger">See Group Availability</a></p>
+        <p><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" [href]="'#'+group._id+'message'" class="modal-trigger">Contact All Members</a></p>
+        <p><a materialize="leanModal" [materializeParams]="[{dismissible: true}]" [href]="'#'+group._id+'availability'" class="modal-trigger">See Group Availability</a></p>
       </div>
       <hr>
       
@@ -35,7 +35,9 @@
       <!-- SNT GROUP MEMBERS - END        -->
       <!-- |||||||||||||||||||||||||||||| -->
       <div class="row center-align">
-        <button materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#snt-group-joining" class="modal-trigger btn cust-btn">Join SNT</button>
+        <button  class="btn cust-btn">
+          <a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" [href]="'#'+group._id+'join'">Join SNT</a>
+        </button>
       </div>
       
     </div>
@@ -49,7 +51,7 @@
 <!-- ||JOIN SNT GROUP MODAL - START    -->
 <!-- ||||||||||||||||||||||||||||||||||-->
 <!-- Modal Structure -->
-<div id="snt-group-joining" class="modal">
+<div [id]="group._id+'join'" class="modal">
   <div class="modal-content">
     <h4>Please enter your information</h4>
     <div class="row">
@@ -130,7 +132,7 @@
 <!-- ||GROUP AVAILABILITY MODAL - START    -->
 <!-- ||||||||||||||||||||||||||||||||||-->
 <!-- Modal Structure -->
-<div id="snt-availability" class="modal">
+<div [id]="group._id+'availability'" class="modal">
   <div class="modal-content">
     <h4 class="group-name">{{group.group_name}}</h4>
     <div class="row">
@@ -153,7 +155,9 @@
   </div>
   <div class="modal-footer">
     <button class="modal-trigger modal-close btn cust-btn">Cancel</button>
-    <button materialize="leanModal" [materializeParams]="[{dismissible: true}]" href="#snt-group-joining" class="modal-trigger modal-close btn cust-btn">Join SNT</button>
+    <button  class="btn cust-btn">
+      <a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" [href]="'#'+group._id+'join'">Join SNT</a>
+    </button>
   </div>
 </div>
 <!-- ||||||||||||||||||||||||||||||||||-->
@@ -165,7 +169,7 @@
 <!-- ||GROUP MESSAGE SEND - START    -->
 <!-- ||||||||||||||||||||||||||||||||||-->
 <!-- Modal Structure -->
-<div id="group-message" class="modal">
+<div [id]="group._id+'message'" class="modal">
   <div class="modal-content">
     <h4>Sending Message to {{group.group_name}}</h4>
     <div class="row">
